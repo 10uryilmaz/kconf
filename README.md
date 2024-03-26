@@ -1,29 +1,27 @@
-# Kconf Layout Converter
+# Kconf layout config converter
 
-This project provides a Python script for converting saved layout configuration files from Keychron Q8 Max to Keychron K11 Pro. It enables users to transfer their custom layouts from Q8 Max to K11 Pro, preserving the user's preferred key mappings and functionalities and Macros.
+This project provides a Python script for converting saved layout configuration files of Keychron Q8 Max to Keychron K11 Pro and vice versa.
+Works with QMK VIA web app.
 
 ## Background
 
-The Keychron Q8 Max and K11 Pro are popular mechanical keyboards among enthusiasts for their build quality, customizable layouts, and distinctive features. However, transitioning custom layouts from the Q8 Max to the K11 Pro can be challenging due to differences in their exported configuration file formats.
-
-This tool was developed by manually comparing layout files from both models. Given that the Keychron Q8's official website advises against firmware modifications unless necessary, this tool provides a safe alternative to adjust and transfer layouts without the need to reset the firmware or risk potential incompatibilities.
+Crafted through a detailed comparison of layout files between the Keychron Q8 Max and K11 Pro, this converter addresses the challenge of differing exported configuration file formats. It provides a solution for adapting and transferring layouts without necessitating firmware resets or risking compatibility issues.
 
 ## Features
 
-- Reads configuration from exported Q8 Max layout files.
-- Generates compatible configuration files for the K11 Pro.
-- Preserves custom key mappings and functionalities.
-- Supports potential expansion for converting configuration files between different keyboard models with the same physical layout.
+- Seamlessly reads and converts configuration files from the Q8 Max to the K11 Pro and potentially vice versa.
+- Maintains custom key mappings for all layouts, macros, and functionalities across conversions.
+- Designed with the flexibility to support additional keyboard models with compatible physical layouts in the future.
 
 ## Getting Started
 
 ### Prerequisites
 
-- Python 3.x installed on your system.
+Ensure Python 3.x is installed on your machine.
 
 ### Installation
 
-1. Clone the repository to your local machine:
+1. Clone the repository:
 
 git clone https://github.com/10uryilmaz/keychron-layout-converter.git
 
@@ -32,13 +30,36 @@ Navigate to the cloned repository:
 cd keychron-layout-converter
 
 # Usage
-Place your exported Q8 Max layout configuration file in the root directory of the project and name it input.json.
+Export and place your exported configuration file in the root directory make sure its file name is not modified as its downloaded a few times etc.
 
 Run the conversion script:
 
 python kconv.py
 
-The script will generate a new file named output.json in the root directory, which contains the K11 Pro compatible configuration.
+If all goes well the script will generate the new config file in the root directory, which contains the K11 Pro compatible configuration.
 
-## Contributing
-Contributions are welcome! If you have suggestions for improving this tool, feel free to fork the repository and submit a pull request. Potential areas for expansion include supporting different keyboard model config conversions.In the time of writing this I did not have the config export from fresh Q8 Max so I implemented only converter from Q8 to K11 but it should be possible to write conver which will make this conversion in between any different keyboards which share the same physical layout.
+# Known Limitations
+
+Its tested and working fine for converting:
+  Keychron Q8 Max config to Keychron K11 Pro. 
+  Keychron K11 Pro to Keychron Q8 Max.
+  (Both are rgb hot swappable models)
+
+I believe it should be working fine for converting:
+  Any Keychron Q8 model to any Keychorn K11.
+  Any Keychorn K11 model to any Keychorn Q8 model.
+  (I am not a keyboard enthusiast so I am not %100 sure wether the vendorproductids are same for all models sharing the same model family so if you try please let     me know the results)
+
+## Contributing and Further Improvements
+Your contributions are encouraged and welcome! If you have ideas for enhancing this tool or extending its compatibility to other models, please fork the repository and submit a pull request. While the initial focus has been on converting from and to Q8 and K11 due to available configurations, the goal is to eventually support bidirectional conversions between any two keyboards sharing the same physical layout.
+
+If you have suggestions for improving this tool, feel free to fork the repository and submit a pull request. Potential areas for expansion include supporting different keyboard model config conversions. 
+As I did not have the fresh Q8 Max config file I did not try this but I believe a general approach would be possible in order to convert the config files of 
+keyboards which have the same physical key layouts. So the next step can be to update the code to convert any keyboard config to another if they have the same 
+physical layout.
+
+## Questions or Suggestions?
+
+Feel free to reach out if you have any questions, suggestions, or just want to share your experience with the project. I'm always happy to connect with fellow enthusiasts and learn from your feedback.
+
+📧 Email: onuryilmaz@onuryilmaz.com
