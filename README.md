@@ -1,4 +1,4 @@
-# Kconf layout config converter
+# Keychorn Layout Config Converter
 
 This project provides a Python script for converting saved layout configuration files of Keychron Q8 Max to Keychron K11 Pro and vice versa.
 Works with QMK VIA web app.
